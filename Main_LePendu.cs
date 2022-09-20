@@ -13,7 +13,7 @@ class Main_LePendu
         {
         
         Program pgrm = new Program();
-        // Write to console \n = passage a la ligne
+        // Write to console \n = passage a la ligne 
         Console.WriteLine("***************************");
         Console.WriteLine("***** le Jeu_du_Pendu *****");
         Console.WriteLine("***************************"); 
