@@ -1,0 +1,15 @@
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\bin\Debug\net6.0\Jeu_C#_LePendu.exe
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\bin\Debug\net6.0\Jeu_C#_LePendu.deps.json
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\bin\Debug\net6.0\Jeu_C#_LePendu.runtimeconfig.json
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\bin\Debug\net6.0\Jeu_C#_LePendu.dll
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\bin\Debug\net6.0\Jeu_C#_LePendu.pdb
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\Jeu_C#_LePendu.csproj.AssemblyReference.cache
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\Jeu_C#_LePendu.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\Jeu_C#_LePendu.AssemblyInfoInputs.cache
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\Jeu_C#_LePendu.AssemblyInfo.cs
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\Jeu_C#_LePendu.csproj.CoreCompileInputs.cache
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\Jeu_C#_LePendu.dll
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\refint\Jeu_C#_LePendu.dll
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\Jeu_C#_LePendu.pdb
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\Jeu_C#_LePendu.genruntimeconfig.cache
+C:\Users\Julien\Desktop\Jeu_C#_LePendu\obj\Debug\net6.0\ref\Jeu_C#_LePendu.dll

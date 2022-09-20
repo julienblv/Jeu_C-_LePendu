@@ -1,0 +1,18 @@
+Dans un premier temps il faut désigner un joueur qui devra deviner le mot. Pour expliquer plus facilement nous allons partir sur un exemple. 
+Il y a deux joueurs, Rémi et Margaux.
+
+Rémi pense à un mot et Margaux devra le deviner. Pour ce faire, Rémi dessine la potence et place en dessous autant de tirets qu’il y a de lettres dans le mot.
+Margaux annonce une lettre. La lettre fait-elle partie du mot à deviner ?
+
+Si oui, Rémi inscrit la lettre à sa place, sur le tiret correspondant, et autant de fois que la lettre apparait dans le mot.
+Si non, Rémi dessine le premier trait du pendu.
+Le jeu continue jusqu’au moment où l’un des joueurs remporte la partie. C’est-à-dire :
+
+Margaux remporte la partie en découvrant toutes les lettres du mot.
+Rémi gagne la partie en dessinant tous les trais du pendu.
+A savoir :
+
+Le nombre de coups dans une partie dépend du nombre de traits qu’il faut pour réaliser le dessin du pendu.  
+Il est donc possible d’augmenter le nombre de chance en dessinant également la potence, et pas seulement le pendu, 
+durant la partie. Cela facilite le jeu et permet au joueur qui cherche d’avoir plus de chances de trouver le mot.
+Ici le dessin est representé en nombre de vies soit 8.
