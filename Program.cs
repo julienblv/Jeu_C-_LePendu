@@ -15,8 +15,6 @@
     int compteurVie;
     public void Update()
     {
-        while(toursP1<5 && toursP2<5)
-        {
             // Write to console \n = passage a la ligne
             Console.WriteLine("La partie va bientot commençer, saisissez le nom du joueur 1 : "); 
             EntreeJoueur1();
@@ -28,55 +26,22 @@
 
             if(toursP1 != 0)
             {
+                Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2();
                 MotEntreJ1();
-                Class_mot_LePendu penduM = new Class_mot_LePendu();
-                while(penduM.MotDecouvert() == false )
-                {
-                
-                penduM.MotADecouvrir(motJ1);
-                penduM.ToString();
-                
-                //saisie de lettre
-                Console.WriteLine("saisissez une lettre J1");
-                lettreSaisie = Console.ReadLine();
-                lettreSaisie2 = Convert.ToChar(lettreSaisie);
-              
-                //check par rapport au mot
-                penduM.LettreDecouverte(lettreSaisie2);
-                penduM.MotDecouvert();
-
-                //toursP1++; //sert a faire passer au tour d'apres
-                }
+                Mdvn.TableauDuMot(motJ1);
+                Mdvn.MotCoupé();
+            
             }
-
+            
             else
             {
-                Class_mot_LePendu penduM = new Class_mot_LePendu();
+                Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2();
                 MotEntreJ2();
-
-                while(penduM.MotDecouvert() == false )
-                {
-                    
-                    penduM.MotADecouvrir(motJ2);
-                    penduM.ToString();
-                    
-                    //saisie de lettre
-                    Console.WriteLine("saisissez une lettre J2");
-                    lettreSaisie = Console.ReadLine();
-                    lettreSaisie2 = Convert.ToChar(lettreSaisie);
-                
-                    //check par rapport au mot
-                    penduM.LettreDecouverte(lettreSaisie2);
-
-                    //tcheckup du mot decouvert
-                    penduM.MotDecouvert();
-                    //toursP1++; //sert a faire passer au tour d'apres
-                }
-                
+                Mdvn.TableauDuMot(motJ1);
+                Mdvn.MotCoupé();
 
                 
             }
-        }
 
     }
 

@@ -5,8 +5,8 @@
  
        public void MotADecouvrir(String nouveauMot)
        {
-           Mot = nouveauMot;
-           lettresVisibles = new Boolean[Mot.Count()];
+           lettresVisibles = new Boolean[nouveauMot.Count()];
+           Console.WriteLine(lettresVisibles);
        }
  
        public override String ToString()
@@ -46,6 +46,43 @@
 
 
 
+//     Class_mot_LePendu penduM = new Class_mot_LePendu();
+            //     while(penduM.MotDecouvert() == false )
+            //     {
+                
+            //     penduM.MotADecouvrir(motJ1);
+            //     penduM.ToString();
+                
+            //     Console.WriteLine("debug1");
+            //     //saisie de lettre
+            //     Console.WriteLine("saisissez une lettre J1");
+            //     lettreSaisie = Console.ReadLine();
+            //     lettreSaisie2 = Convert.ToChar(lettreSaisie);
+            //    Console.WriteLine("debug2");
+            //     //check par rapport au mot
+            //     penduM.LettreDecouverte(lettreSaisie2);
+            //     penduM.MotDecouvert();
+            //    Console.WriteLine("debug3");
+            //     //toursP1++; //sert a faire passer au tour d'apres
 
+            //Class_mot_LePendu penduM = new Class_mot_LePendu();
+                // while(penduM.MotDecouvert() == false )
+                // {
+                    
+                //     penduM.MotADecouvrir(motJ2);
+                //     penduM.ToString();
+                    
+                //     //saisie de lettre
+                //     Console.WriteLine("saisissez une lettre J2");
+                //     lettreSaisie = Console.ReadLine();
+                //     lettreSaisie2 = Convert.ToChar(lettreSaisie);
+                
+                //     //check par rapport au mot
+                //     penduM.LettreDecouverte(lettreSaisie2);
+
+                //     //tcheckup du mot decouvert
+                //     penduM.MotDecouvert();
+                //     //toursP1++; //sert a faire passer au tour d'apres
+                // }
 
    
