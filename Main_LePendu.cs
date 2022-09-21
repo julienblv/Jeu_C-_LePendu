@@ -8,12 +8,8 @@ class Main_LePendu
     // Main begins program execution.
     static void Main(string[] agrs)
     {
-        bool gameisOn = true;
-        while(gameisOn == true)
-        {
-        
         Program pgrm = new Program();
-        // Write to console \n = passage a la ligne 
+            // Write to console \n = passage a la ligne 
         Console.WriteLine("***************************");
         Console.WriteLine("***** le Jeu_du_Pendu *****");
         Console.WriteLine("***************************"); 
@@ -25,23 +21,26 @@ class Main_LePendu
         Console.WriteLine("           Quitter(3)      ");
         Console.WriteLine("                           ");
         Console.WriteLine("Sasissez vôtre choix (1 à 3)");
-        string ActionMenu = Console.ReadLine();
-        int ActionMenuParsed = Convert.ToInt32(ActionMenu);
+        bool gameisOn = true;
+        while(gameisOn == true)
+        {
+            string ActionMenu = Console.ReadLine();
+            int ActionMenuParsed = Convert.ToInt32(ActionMenu);
 
-            switch (ActionMenuParsed)
-            {
-                case 1: 
-                    Start();
-                    break;
-                case 2:
-                    Regles();
-                    break;
-                case 3:
-                    Quitter();
-                    gameisOn = false;
-                    break;
-                    
-            }
+                switch (ActionMenuParsed)
+                {
+                    case 1: 
+                        Start();
+                        break;
+                    case 2:
+                        Regles();
+                        break;
+                    case 3:
+                        Quitter();
+                        gameisOn = false;
+                        break;
+                        
+                }
         }
     }
 
@@ -61,7 +60,7 @@ class Main_LePendu
         }
 
         Console.WriteLine("Appuyez sur une touche pour sortir.");
-        System.Console.ReadKey();
+        // System.Console.ReadKey();
         
     }
 
