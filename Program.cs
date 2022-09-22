@@ -12,6 +12,8 @@
     static string lettreSaisie;
     static char lettreSaisie2;
 
+    static char[] tableau2LettresUp;
+
     int compteurVie;
     public void Update()
     {
@@ -28,7 +30,7 @@
             {
                 Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2();
                 MotEntreJ1();
-                Mdvn.TableauDuMot(motJ1);
+                Mdvn.TableauDuMot(motJ1,tableau2LettresUp);
                 Mdvn.MotCoupé();
             
             }
@@ -37,7 +39,7 @@
             {
                 Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2();
                 MotEntreJ2();
-                Mdvn.TableauDuMot(motJ1);
+                Mdvn.TableauDuMot(motJ2,tableau2LettresUp);
                 Mdvn.MotCoupé();
 
                 
