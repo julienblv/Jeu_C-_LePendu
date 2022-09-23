@@ -18,11 +18,14 @@ class Class_mot_LePendu_2
     this.Mot = Mot;
     this.tableau2Lettres = tableau2Lettres;
 
+    
+
   }
 
   public void MotCoupé()
   {
-    char Mot2 = Mot.ToCharArray();
+    Mot2 = Convert.ToChar(Mot);
+    
     tableau2Lettres.Add(Mot2);
 
     for(int i=0; i < tableau2Lettres.Count;i++ )
