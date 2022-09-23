@@ -1,101 +1,103 @@
-﻿class Program
+﻿using System.Collections.Generic;
+class Program
+
 {
-    static string joueur1;
-    static string joueur2;
+// Liste pour les joueurs
+    public List<string>Joueur = new List<string>(2);
+    int count = 1;
+
+
+// utile pour quand le joueur commences
     static string joueur_start;
     static int starterval;
-    static int  StartP;
-    static int toursP2;
-    static int toursP1;
-    public string motJ1;
-    public string motJ2;
+    static int  StartPlayer;
+    static int toursPlayer;
+
+// utile pour la class du pendu
+    public string motPlayer;
     static string lettreSaisie;
-    static char lettreSaisie2;
-
     static char[] tableau2LettresUp;
-
     int compteurVie;
+
+
     public void Update()
     {
+        
+        Joueur.Add("J1");
+        Joueur.Add("J2");
+
             // Write to console \n = passage a la ligne
-            Console.WriteLine("La partie va bientot commençer, saisissez le nom du joueur 1 : "); 
-            EntreeJoueur1();
-            Console.WriteLine("ensuite le 2e : "); 
-            EntreeJoueur2();
+        Console.WriteLine("La partie va bientot commençer, saisissez le nom du joueur 1 : "); 
+        EntreeJoueurs();
+        Console.WriteLine("ensuite le 2e : ");
+        EntreeJoueurs();
+            
 
-            Console.WriteLine(" Patientez un instant le jeu détermines qui va començer");
-            usrStart();
+        Console.WriteLine(" Patientez un instant le jeu détermines qui va començer");
+        usrStart();
 
-            if(toursP1 != 0)
+            if(toursPlayer != 0)
             {
                 Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2();
-                MotEntreJ1();
-                Mdvn.TableauDuMot(motJ1,tableau2LettresUp);
+                MotEntre();
+                Mdvn.TableauDuMot(motPlayer,tableau2LettresUp);
                 Mdvn.MotCoupé();
                 Mdvn.lettredevinée();
+
+                //toursPlayer++;
             
             }
             
             else
             {
                 Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2();
-                MotEntreJ2();
-                Mdvn.TableauDuMot(motJ2,tableau2LettresUp);
+                MotEntre();
+                Mdvn.TableauDuMot(motPlayer,tableau2LettresUp);
                 Mdvn.MotCoupé();
                 Mdvn.lettredevinée();
 
+                //toursPlayer++;
                 
             }
 
     }
 
 
-    static string EntreeJoueur1()
+    public string EntreeJoueurs()
     {
-        joueur1 = Console.ReadLine();
+        string read= Console.ReadLine();
+        Joueur[count] = read;
+        count++;
 
-        return joueur1;
+        return Joueur[count];
     }
 
 
-    static string EntreeJoueur2()
-    {
-        joueur2 = Console.ReadLine();
-
-        return joueur2;
-    }
-
-
-    static void usrStart()
+    public void usrStart()
     {
         Random rnd = new Random();
         starterval = rnd.Next(10);
 
         if(starterval%2 == 0)
         {
-            joueur_start = joueur2;
-            StartP = 2;
+            joueur_start = Joueur[2];
+            StartPlayer = 2;
             
         }
         else
         {
-            joueur_start = joueur1;
-            StartP = 1;
+            joueur_start = Joueur[1];
+            StartPlayer = 1;
             
         }
     }
 
 
-    public void MotEntreJ1()
+    public void MotEntre()
     {
-        Console.WriteLine("Saisissez vôtre mot "+joueur1+" : ");
-        motJ1 = Console.ReadLine();
-    }
 
-    public void MotEntreJ2()
-    {
-        Console.WriteLine("Saisissez vôtre mot "+joueur2+" : ");
-        motJ2 = Console.ReadLine();
+        Console.WriteLine("Saisissez vôtre mot "+Joueur[count]+" : ");
+        motPlayer = Console.ReadLine();
     }
 
     
