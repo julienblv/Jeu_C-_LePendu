@@ -7,7 +7,9 @@
     string lettre;
     char lettre2;
 
-    public char[] Potence;
+    public string Potence;
+
+    public string[] lettresVisibles;
     
     // constructeur permettant d'utiliser le mot et le tableau partout !
       public void TableauDuMot(string Mot, char[] tableau2Lettres)
@@ -37,9 +39,18 @@
 
         foreach(char lettre2 in tableau2Lettres)
         {
-          if(// nombre de lettre présentes dans le tableau //)
-          Console.WriteLine(Potence[lettre2]);
+          Potence = "";
+          tableau2Lettres = lettresVisibles;
+ 
+           for (int x = 0 ; x < tableau2Lettres.Count(); x++)
+           {
+               if (lettresVisibles[x] == tableau2Lettres[x])
+                   Potence += tableau2Lettres[x];
+               else
+                   Potence += "_";
+           }
 
+           Console.WriteLine(Potence);
         }
       }
 

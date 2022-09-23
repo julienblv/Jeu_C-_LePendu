@@ -32,6 +32,7 @@
                 MotEntreJ1();
                 Mdvn.TableauDuMot(motJ1,tableau2LettresUp);
                 Mdvn.MotCoupé();
+                Mdvn.lettredevinée();
             
             }
             
@@ -41,6 +42,7 @@
                 MotEntreJ2();
                 Mdvn.TableauDuMot(motJ2,tableau2LettresUp);
                 Mdvn.MotCoupé();
+                Mdvn.lettredevinée();
 
                 
             }
