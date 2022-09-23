@@ -16,7 +16,7 @@ class Program
 // utile pour la class du pendu
     public string motPlayer;
     static string lettreSaisie;
-    static char[] tableau2LettresUp;
+    static List<char> tableau2LettresUp = new List<char>();
     int compteurVie;
 
 
