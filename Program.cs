@@ -3,8 +3,8 @@ class Program
 
 {
 // Liste pour les joueurs
-    public List<string>Joueur = new List<string>(2);
-    int count = 1;
+    public List<string>Joueur = new List<string>();
+    int count = 0;
 
 
 // utile pour quand le joueur commences
@@ -80,13 +80,13 @@ class Program
 
         if(starterval%2 == 0)
         {
-            joueur_start = Joueur[2];
+            joueur_start = Joueur[1];
             StartPlayer = 2;
             
         }
         else
         {
-            joueur_start = Joueur[1];
+            joueur_start = Joueur[0];
             StartPlayer = 1;
             
         }
