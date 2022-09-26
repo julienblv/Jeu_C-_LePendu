@@ -12,6 +12,8 @@ class Class_mot_LePendu_2
   public List<char> tableau2Lettres = new List<char>();
   public List<char> lettresVisibles = new List<char>();
     
+
+
     // constructeur permettant d'utiliser le mot et le tableau partout !
   public void TableauDuMot(string Mot, List<char> tableau2Lettres)
   {
@@ -24,7 +26,7 @@ class Class_mot_LePendu_2
 
   public void MotCoupé()
   {
-    Mot2 = Convert.ToChar(Mot);
+    Mot2 = Convert.ToChar(Mot); // <------ Problème ici !!!!! le mot pars pas dans le tableau
     
     tableau2Lettres.Add(Mot2);
 
@@ -60,7 +62,7 @@ class Class_mot_LePendu_2
         }
     }
 
-           Console.WriteLine(Potence);
+    Console.WriteLine(Potence);
   }
 }
 

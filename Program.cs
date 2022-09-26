@@ -23,12 +23,22 @@ class Program
     public void Update()
     {
         
-        Joueur.Add("J1"); // vide apres la fonction EntreeJoueurs
-        Joueur.Add("J2");
+        Joueur.Insert(0,"J1"); // <----- Premier joueur est envoyé ici
+        Joueur.Insert(1,"J2");
+        Joueur.Insert(2,"Invalid"); // <----- le nom du 2e joueur considérer comme celui-ci
+        
+
+        foreach(string item in Joueur) {
+            Console.WriteLine(item);
+        }
 
             // Write to console \n = passage a la ligne
         Console.WriteLine("La partie va bientot commençer, saisissez le nom du joueur 1 : "); 
         EntreeJoueurs();
+
+        // foreach(string item in Joueur) {
+        //     Console.WriteLine(item);
+        // }// affiches le j1 saisi mais plantes au 2e Wtf
         Console.WriteLine("ensuite le 2e : ");
         EntreeJoueurs();
             
@@ -65,9 +75,10 @@ class Program
 
     public string EntreeJoueurs()
     {
-        // retourne une saisie vide 
-        string read= Console.ReadLine();
-        Joueur[count] = read;
+        // retourne une saisie vide
+        string nvjoueur = Console.ReadLine();
+
+        Joueur.Insert(count,nvjoueur);
         count++;
 
         return Joueur[count];
@@ -97,7 +108,7 @@ class Program
     public void MotEntre()
     {
 
-        Console.WriteLine("Saisissez vôtre mot "+Joueur[count]+" : ");
+        Console.WriteLine("Saisissez vôtre mot "+ Joueur[count] +" : ");
         motPlayer = Console.ReadLine();
     }
 
