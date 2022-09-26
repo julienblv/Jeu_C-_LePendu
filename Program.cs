@@ -23,7 +23,7 @@ class Program
     public void Update()
     {
         
-        Joueur.Add("J1");
+        Joueur.Add("J1"); // vide apres la fonction EntreeJoueurs
         Joueur.Add("J2");
 
             // Write to console \n = passage a la ligne
@@ -65,6 +65,7 @@ class Program
 
     public string EntreeJoueurs()
     {
+        // retourne une saisie vide 
         string read= Console.ReadLine();
         Joueur[count] = read;
         count++;
