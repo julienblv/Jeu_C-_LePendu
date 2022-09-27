@@ -16,16 +16,16 @@ class Program
 // utile pour la class du pendu
     public string motPlayer;
     static string lettreSaisie;
-    static List<char> tableau2LettresUp = new List<char>();
+    static List<char> tableau2LettresUp = new List<char>(); // <------ peut être pb ici
     int compteurVie;
 
 
     public void Update()
     {
         
-        Joueur.Insert(0,"J1"); // <----- Premier joueur est envoyé ici
+        Joueur.Insert(0,"J1"); 
         Joueur.Insert(1,"J2");
-        Joueur.Insert(2,"Invalid"); // <----- le nom du 2e joueur considérer comme celui-ci
+        Joueur.Insert(2,"Invalid"); 
         
 
         foreach(string item in Joueur) {
@@ -34,24 +34,22 @@ class Program
 
             // Write to console \n = passage a la ligne
         Console.WriteLine("La partie va bientot commençer, saisissez le nom du joueur 1 : "); 
-        EntreeJoueurs();
-
-        // foreach(string item in Joueur) {
-        //     Console.WriteLine(item);
-        // }// affiches le j1 saisi mais plantes au 2e Wtf
+            EntreeJoueurs();
         Console.WriteLine("ensuite le 2e : ");
-        EntreeJoueurs();
-            
-
+            EntreeJoueurs();
         Console.WriteLine(" Patientez un instant le jeu détermines qui va començer");
-        usrStart();
+            usrStart();
+
+            Class_mot_LePendu Mot = new Class_mot_LePendu(/* 2 */); //appel du contructeur  le 2 marches aussi car surcharge de constructeurs
+            Mot.chiffre = 2;
 
             if(toursPlayer != 0)
             {
-                Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2();
+                Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2(Mot); //tant qu'il y a la ref on peut yu accéder
+
                 MotEntre();
                 Mdvn.TableauDuMot(motPlayer,tableau2LettresUp);
-                Mdvn.MotCoupé();
+                Mdvn.MotCoupé(); //pb ici
                 Mdvn.lettredevinée();
 
                 //toursPlayer++;
@@ -60,8 +58,10 @@ class Program
             
             else
             {
-                Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2();
+
+                Class_mot_LePendu_2 Mdvn = new Class_mot_LePendu_2(Mot);
                 MotEntre();
+                
                 Mdvn.TableauDuMot(motPlayer,tableau2LettresUp);
                 Mdvn.MotCoupé();
                 Mdvn.lettredevinée();
@@ -75,7 +75,6 @@ class Program
 
     public string EntreeJoueurs()
     {
-        // retourne une saisie vide
         string nvjoueur = Console.ReadLine();
 
         Joueur.Insert(count,nvjoueur);
@@ -106,8 +105,7 @@ class Program
 
 
     public void MotEntre()
-    {
-
+    {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
         Console.WriteLine("Saisissez vôtre mot "+ Joueur[count] +" : ");
         motPlayer = Console.ReadLine();
     }

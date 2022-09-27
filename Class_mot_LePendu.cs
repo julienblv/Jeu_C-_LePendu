@@ -1,5 +1,14 @@
-//     class Class_mot_LePendu
-//    {
+   public class Class_mot_LePendu
+  {
+    public Class_mot_LePendu(int reference)
+    {
+        chiffre = reference ; 
+    }
+    public Class_mot_LePendu()
+    { 
+    }
+
+    public int chiffre;
 //        private Boolean[] lettresVisibles;
 //        private String Mot;
  
@@ -42,7 +51,7 @@
 //        {
 //            return !lettresVisibles.Any(l => !l);
 //        }
-//     }
+   }
 
 
 
