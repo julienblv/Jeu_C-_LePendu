@@ -57,13 +57,15 @@ class Partie
     }
     public void afficherPotence()
     {
-        for(int i =0; i < motAdevinerP.Length ; i++)
+        for(int i =0; i < motAdevinerP.Length; i++)
         {
-            Potence[i]="_";
-            Console.WriteLine(Potence[i]);
+            Potence.Add("_");  
         }
 
-        
-    }
-
+        for(int i =0; i < Potence.Count;i++)
+        {
+        Console.WriteLine(Potence[i]);
+        }
+    }  
 }
+

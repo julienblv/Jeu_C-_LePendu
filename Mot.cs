@@ -18,7 +18,6 @@ class Mot
         Console.WriteLine(motAdevinerM + " est le mot a deviner");
 
         Console.WriteLine("Au joueur d'apres de deviner le mot (choisissez une lettre) : ");
-
         lettreSaisi = Console.ReadLine();
 
         if(lettreSaisi.Length > 1)
@@ -26,6 +25,7 @@ class Mot
             Console.WriteLine("veuillez ne saisir que 1 lettre");
             lettreSaisi = Console.ReadLine();
         }
+
         Convert.ToChar(lettreSaisi);
 
         Console.WriteLine("Vous avez choi la lettre : " + lettreSaisi);
