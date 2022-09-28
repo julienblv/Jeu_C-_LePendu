@@ -6,6 +6,8 @@ class Partie
     public int ToursJ1;
     public int ToursJ2;
 
+    public List<string> Potence = new List<string>();
+
     public void Commencer()
     {
         Console.WriteLine("Bienvenue à toi ! Saisies le nom du Joueur 1");
@@ -41,6 +43,7 @@ class Partie
         
         Mot mot = new Mot(motAdevinerP); //pass pas 
         mot.VerificationMot();
+        afficherPotence();
 
         //mot.MotIncorrect();
         
@@ -52,8 +55,14 @@ class Partie
     {
 
     }
-    public void Potence()
+    public void afficherPotence()
     {
+        for(int i =0; i < motAdevinerP.Length ; i++)
+        {
+            Potence[i]="_";
+            Console.WriteLine(Potence[i]);
+        }
+
         
     }
 

@@ -47,12 +47,12 @@ class Mot
 
     public void MotCorrect()
     {
-
+        Console.WriteLine("Bravo vous avez trouvé le mot : " + motAdevinerM);
     }
 
     public void MotIncorrect()
     {
-
+        Console.WriteLine("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM);
     }
 
 
