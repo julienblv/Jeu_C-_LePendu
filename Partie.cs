@@ -57,22 +57,4 @@ class Partie
         
     }
 
-    public void AffichejoueurSuivant()
-    {
-        if(ToursJ1 %2 ==1){
-            Console.WriteLine(Joueur[0] + " A toi de deviner le mot : ");
-        }
-        else
-        {
-            Console.WriteLine(Joueur[1] + " A toi de deviner le mot : ");
-        }
-
-         if(ToursJ2 %2 ==1){
-            Console.WriteLine(Joueur[1] + " A toi de deviner le mot : ");
-        }
-        else
-        {
-            Console.WriteLine(Joueur[0] + " A toi de deviner le mot : ");
-        }
-    }
 }

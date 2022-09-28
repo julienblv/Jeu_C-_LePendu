@@ -17,8 +17,7 @@ class Mot
     {
         Console.WriteLine(motAdevinerM + " est le mot a deviner");
 
-        Partie partie = new Partie();
-        partie.AffichejoueurSuivant();
+        Console.WriteLine("Au joueur d'apres de deviner le mot : ");
 
         lettreSaisi = Convert.ToChar(Console.ReadLine());
 
