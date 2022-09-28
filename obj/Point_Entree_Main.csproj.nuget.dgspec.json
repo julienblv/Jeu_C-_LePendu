@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Julien\\Desktop\\Jeu_C#_LePendu\\Jeu_C#_LePendu.csproj": {}
+    "C:\\Users\\Julien\\Desktop\\Jeu_C#_LePendu\\Point_Entree_Main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Julien\\Desktop\\Jeu_C#_LePendu\\Jeu_C#_LePendu.csproj": {
+    "C:\\Users\\Julien\\Desktop\\Jeu_C#_LePendu\\Point_Entree_Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Julien\\Desktop\\Jeu_C#_LePendu\\Jeu_C#_LePendu.csproj",
-        "projectName": "Jeu_C#_LePendu",
-        "projectPath": "C:\\Users\\Julien\\Desktop\\Jeu_C#_LePendu\\Jeu_C#_LePendu.csproj",
+        "projectUniqueName": "C:\\Users\\Julien\\Desktop\\Jeu_C#_LePendu\\Point_Entree_Main.csproj",
+        "projectName": "Point_Entree_Main",
+        "projectPath": "C:\\Users\\Julien\\Desktop\\Jeu_C#_LePendu\\Point_Entree_Main.csproj",
         "packagesPath": "C:\\Users\\Julien\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Julien\\Desktop\\Jeu_C#_LePendu\\obj\\",
         "projectStyle": "PackageReference",

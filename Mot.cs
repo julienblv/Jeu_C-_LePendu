@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 class Mot
 {
     //constructeur pour que le mot soit utilisable partout

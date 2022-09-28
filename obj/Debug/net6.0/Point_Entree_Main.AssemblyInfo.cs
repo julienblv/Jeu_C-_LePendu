@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Jeu_C#_LePendu")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Point_Entree_Main")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Jeu_C#_LePendu")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Jeu_C#_LePendu")]
+[assembly: System.Reflection.AssemblyProductAttribute("Point_Entree_Main")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Point_Entree_Main")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.

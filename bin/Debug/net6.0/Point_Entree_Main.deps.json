@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Jeu_C#_LePendu/1.0.0": {
+      "Point_Entree_Main/1.0.0": {
         "runtime": {
-          "Jeu_C#_LePendu.dll": {}
+          "Point_Entree_Main.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Jeu_C#_LePendu/1.0.0": {
+    "Point_Entree_Main/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
