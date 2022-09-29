@@ -59,7 +59,6 @@ class Partie
 
         while(VieP!=0)
         {
-            afficherPotenceVide();
             mot.VerificationMot();
           
 
@@ -69,22 +68,9 @@ class Partie
                 mot.lettreSaisi = "";
 
             }
-
-            // remplace les lettres dans la potence
-            for (int i = 0; i < motAdevinerP.Length; i++)
+            else
             {
-                if (motAdevinerP.Contains(mot.lettreSaisi[i]))
-                {
-                    
-                    string ichar = Convert.ToString(mot.lettreSaisi[i]);
-                    Potence.Add(ichar);
-                    Console.WriteLine(string.Join(" ", Potence));
-                }
-                else
-                {
-                    Potence.Add("_");
-                    Console.WriteLine(string.Join(" ", Potence));
-                }
+                afficherPotenceSeRemplit();
             }
            
         }
@@ -114,5 +100,27 @@ class Partie
         }
          Console.WriteLine(string.Join(" ", Potence));
     }  
+
+    public void afficherPotenceSeRemplit()
+    {
+        
+
+        // remplace les lettres dans la potence
+            for (int i = 0; i < motAdevinerP.Length; i++)
+            {
+                if (mot.motAdevinerM.Contains(mot.lettreSaisi[i]))
+                {
+                    
+                    string ichar = Convert.ToString(mot.lettreSaisi[i]);
+                    Potence.Add(ichar);
+                    Console.WriteLine(string.Join(" ", Potence));
+                }
+                else
+                {
+                    Potence.Add("_");
+                    Console.WriteLine(string.Join(" ", Potence));
+                }
+            }
+    }
 }
 
