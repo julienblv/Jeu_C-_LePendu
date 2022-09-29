@@ -1,10 +1,14 @@
 class Partie
 {
     public List<string>Joueur = new List<string>();
-    public string motAdevinerP;
+    static string motAdevinerP;
 
     public int ToursJ1;
     public int ToursJ2;
+
+    Mot mot = new Mot(motAdevinerP,VieP);
+
+    static int VieP = 8;
 
     public List<string> Potence = new List<string>();
 
@@ -40,32 +44,37 @@ class Partie
     {
         Console.WriteLine(" Saisissez le mot à faire deviner : ");
         motAdevinerP = Console.ReadLine();
-        
-        Mot mot = new Mot(motAdevinerP); //pass pas 
-        mot.VerificationMot();
-        afficherPotence();
 
-        //mot.MotIncorrect();
-        
-        //mot.MotCorrect();
+        //mot a deviner déclaré au début 
+
+        while(VieP!=0)
+        {
+            mot.VerificationMot();
+                afficherPotence();
+            //mot.MotIncorrect();
+            
+            //mot.MotCorrect();
+        }
         
     }
 
     public void partieGagnée()
     {
-
+        mot.MotCorrect();
     }
+
+    public void partiePerdue()
+    {
+        mot.MotIncorrect();
+    }
+
     public void afficherPotence()
     {
         for(int i =0; i < motAdevinerP.Length; i++)
         {
             Potence.Add("_");  
         }
-
-        for(int i =0; i < Potence.Count;i++)
-        {
-        Console.WriteLine(Potence[i]);
-        }
+         Console.WriteLine(string.Join(" ", Potence));
     }  
 }
 

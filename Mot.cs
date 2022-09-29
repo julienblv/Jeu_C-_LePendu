@@ -6,10 +6,13 @@ class Mot
     
     public string motAdevinerM;
     public string lettreSaisi;
+
+    public int VieM;
     //constructeur pour que le mot soit utilisable partout
-    public Mot(string mot)
+    public Mot(string mot,int vie)
     {
         motAdevinerM = mot;
+        VieM = vie;
     }
 
 
@@ -38,6 +41,7 @@ class Mot
         else
         {
             Console.WriteLine("Aïe Malheureusement ce n'est pas la bonne lettre");
+            VieM--;
         }
 
 
