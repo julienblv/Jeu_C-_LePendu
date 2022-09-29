@@ -49,6 +49,30 @@ class Mot
             VieM = VieM-1;
         }
 
+        if(Partie.Potence.Contains(lettreSaisi))
+            {
+                Console.WriteLine("Oups vous avez déjà mis cette lettre !");
+                lettreSaisi = "";
+
+            }
+
+            // remplace les lettres dans la potence
+            for (int i = 0; i < motAdevinerM.Length; i++)
+            {
+                if (motAdevinerM.Contains(lettreSaisi[i]))
+                {
+                    
+                    string ichar = Convert.ToString(lettreSaisi[i]);
+                    Partie.Potence.Add(ichar);
+                    Console.WriteLine(string.Join(" ", Partie.Potence));
+                }
+                else
+                {
+                    Partie.Potence.Add("_");
+                    Console.WriteLine(string.Join(" ", Partie.Potence));
+                }
+            }
+
 
         
     }

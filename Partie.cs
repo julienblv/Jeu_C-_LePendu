@@ -56,10 +56,11 @@ class Partie
         //déclares mon constructeur
         Mot mot = new Mot(motAdevinerP,VieP);
 
+
         while(VieP!=0)
         {
+            afficherPotenceVide();
             mot.VerificationMot();
-                afficherPotence();
           
 
             if(Potence.Contains(mot.lettreSaisi))
@@ -68,11 +69,22 @@ class Partie
                 mot.lettreSaisi = "";
 
             }
-            
-            if(motAdevinerP.Contains(Potence))
+
+            // remplace les lettres dans la potence
+            for (int i = 0; i < motAdevinerP.Length; i++)
             {
-                 partieGagnée();
-                 break;
+                if (motAdevinerP.Contains(mot.lettreSaisi[i]))
+                {
+                    
+                    string ichar = Convert.ToString(mot.lettreSaisi[i]);
+                    Potence.Add(ichar);
+                    Console.WriteLine(string.Join(" ", Potence));
+                }
+                else
+                {
+                    Potence.Add("_");
+                    Console.WriteLine(string.Join(" ", Potence));
+                }
             }
            
         }
@@ -94,7 +106,7 @@ class Partie
         mot.MotIncorrect();
     }
 
-    public void afficherPotence()
+    public void afficherPotenceVide()
     {
         for(int i =0; i < motAdevinerP.Length; i++)
         {
