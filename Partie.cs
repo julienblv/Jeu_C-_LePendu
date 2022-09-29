@@ -1,21 +1,27 @@
 class Partie
 {
     public List<string>Joueur = new List<string>();
-    static string motAdevinerP;
+    public string motAdevinerP;
 
     public int ToursJ1;
     public int ToursJ2;
+    
+    public int VieP = 8;
+
 
     Mot mot = new Mot(motAdevinerP,VieP);
 
-    static int VieP = 8;
+    
+    
+
+    
 
     public List<string> Potence = new List<string>();
 
     public void Commencer()
     {
         Console.WriteLine("Bienvenue à toi ! Saisies le nom du Joueur 1");
-        Joueur.Add(Console.ReadLine()); //Joueur[0]
+        Joueur.Add(Console.ReadLine());//Joueur[0]
         Console.WriteLine("Merci ! Maintenant, saisies le nom du Joueur 2");
         Joueur.Add(Console.ReadLine()); //Joueur[1]
         QuiCommences();
@@ -51,9 +57,18 @@ class Partie
         {
             mot.VerificationMot();
                 afficherPotence();
-            //mot.MotIncorrect();
-            
-            //mot.MotCorrect();
+          
+            // if(motAdevinerP == Potence)
+            // {
+            //     partieGagnée();
+            //     break;
+            // }
+           
+        }
+
+        if(VieP==0)
+        {
+            partiePerdue();
         }
         
     }

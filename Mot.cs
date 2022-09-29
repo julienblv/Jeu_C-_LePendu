@@ -7,7 +7,7 @@ class Mot
     public string motAdevinerM;
     public string lettreSaisi;
 
-    public int VieM;
+    public int VieM = 8;
     //constructeur pour que le mot soit utilisable partout
     public Mot(string mot,int vie)
     {
@@ -33,7 +33,7 @@ class Mot
 
         Console.WriteLine("Vous avez choi la lettre : " + lettreSaisi);
 
-        if(motAdevinerM.Contains(lettreSaisi))
+        if(motAdevinerM.Contains(lettreSaisi)) // Plantes ici
         {
             Console.WriteLine(" Bravo vous avez trouvé la lettre : "+ lettreSaisi);
 
@@ -41,7 +41,7 @@ class Mot
         else
         {
             Console.WriteLine("Aïe Malheureusement ce n'est pas la bonne lettre");
-            VieM--;
+            VieM = VieM-1;
         }
 
 
