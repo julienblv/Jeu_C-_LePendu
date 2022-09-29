@@ -4,10 +4,9 @@ class Mot
 {
 
     
-    public string motAdevinerM;
     public string lettreSaisi;
 
-    public int VieM = 8;
+    
     //constructeur pour que le mot soit utilisable partout
     public Mot(string mot,int vie)
     {
@@ -15,6 +14,8 @@ class Mot
         VieM = vie;
     }
 
+    public string motAdevinerM;
+    public int VieM = 8;
 
     public void VerificationMot()
     {
@@ -33,7 +34,9 @@ class Mot
 
         Console.WriteLine("Vous avez choi la lettre : " + lettreSaisi);
 
-        if(motAdevinerM.Contains(lettreSaisi)) // Plantes ici
+        //Console.WriteLine("Debug devinez " + motAdevinerM);
+
+        if(motAdevinerM.Contains(lettreSaisi)) //Plantes ici car motAdevinerM null
         {
             Console.WriteLine(" Bravo vous avez trouvé la lettre : "+ lettreSaisi);
 

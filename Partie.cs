@@ -1,16 +1,18 @@
 class Partie
 {
     public List<string>Joueur = new List<string>();
-    public string motAdevinerP;
+    
 
     public int ToursJ1;
     public int ToursJ2;
     
-    public int VieP = 8;
+    
 
 
     Mot mot = new Mot(motAdevinerP,VieP);
-
+    static string motAdevinerP;
+    static int VieP = 8;
+    
     
     
 
