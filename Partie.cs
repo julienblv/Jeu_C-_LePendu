@@ -108,7 +108,7 @@ class Partie
         // remplace les lettres dans la potence
             for (int i = 0; i < motAdevinerP.Length; i++)
             {
-                if (mot.motAdevinerM.Contains(mot.lettreSaisi[i]))
+                if (mot.motAdevinerM.Contains(mot.lettreSaisi[i])) //un des deux est null
                 {
                     
                     string ichar = Convert.ToString(mot.lettreSaisi[i]);
