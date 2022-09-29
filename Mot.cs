@@ -3,6 +3,7 @@ using System.Collections.Generic;
 class Mot
 {
 
+    public Partie Partie = new Partie();
     
     public string lettreSaisi;
 
@@ -38,6 +39,7 @@ class Mot
 
         if(motAdevinerM.Contains(lettreSaisi)) //Plantes ici car motAdevinerM null
         {
+            Partie.Potence.Add(lettreSaisi);
             Console.WriteLine(" Bravo vous avez trouvé la lettre : "+ lettreSaisi);
 
         }

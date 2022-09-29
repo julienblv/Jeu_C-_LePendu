@@ -9,7 +9,7 @@ class Partie
     
 
 
-    Mot mot = new Mot(motAdevinerP,VieP);
+    Mot mot ;
     static string motAdevinerP;
     static int VieP = 8;
     
@@ -53,18 +53,27 @@ class Partie
         Console.WriteLine(" Saisissez le mot à faire deviner : ");
         motAdevinerP = Console.ReadLine();
 
-        //mot a deviner déclaré au début 
+        //déclares mon constructeur
+        Mot mot = new Mot(motAdevinerP,VieP);
 
         while(VieP!=0)
         {
             mot.VerificationMot();
                 afficherPotence();
           
-            // if(motAdevinerP == Potence)
-            // {
-            //     partieGagnée();
-            //     break;
-            // }
+
+            if(Potence.Contains(mot.lettreSaisi))
+            {
+                Console.WriteLine("Oups vous avez déjà mis cette lettre !");
+                mot.lettreSaisi = "";
+
+            }
+            
+            if(motAdevinerP.Contains(Potence))
+            {
+                 partieGagnée();
+                 break;
+            }
            
         }
 
