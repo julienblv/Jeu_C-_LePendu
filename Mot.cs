@@ -5,7 +5,7 @@ class Mot
 
     public Partie Partie = new Partie();
     
-    public string lettreSaisi;
+    public string UserInput;
 
     
     //constructeur pour que le mot soit utilisable partout
@@ -23,24 +23,26 @@ class Mot
         Console.WriteLine(motAdevinerM + " est le mot a deviner");
 
         Console.WriteLine("Au joueur d'apres de deviner le mot (choisissez une lettre) : ");
-        lettreSaisi = Console.ReadLine();
+        UserInput=(Console.ReadLine());
 
-        if(lettreSaisi.Length > 1)
+        if(UserInput.Length > 1)
         {
             Console.WriteLine("veuillez ne saisir que 1 lettre");
-            lettreSaisi = Console.ReadLine();
+            UserInput = Console.ReadLine();
         }
 
-        Convert.ToChar(lettreSaisi);
+       char _char =  Convert.ToChar(UserInput);
 
-        Console.WriteLine("Vous avez choi la lettre : " + lettreSaisi);
+        Console.WriteLine("Vous avez choi la lettre : " + _char);
+        Partie.lettreSaisi.Add(_char.ToString());
+        
 
         //Console.WriteLine("Debug devinez " + motAdevinerM);
 
-        if(motAdevinerM.Contains(lettreSaisi)) //Plantes ici car motAdevinerM null
+        if(motAdevinerM.Contains(_char)) //Plantes ici car motAdevinerM null
         {
-            Partie.Potence.Add(lettreSaisi);
-            Console.WriteLine(" Bravo vous avez trouvé la lettre : "+ lettreSaisi);
+            Partie.Potence.Add(_char.ToString());
+            Console.WriteLine(" Bravo vous avez trouvé la lettre : "+ UserInput);
 
         }
         else
@@ -48,12 +50,11 @@ class Mot
             Console.WriteLine("Aïe Malheureusement ce n'est pas la bonne lettre");
             VieM = VieM-1;
         }
-        
 
 
-        
+
+
     }
-
 
     public void MotCorrect()
     {
@@ -65,12 +66,7 @@ class Mot
         Console.WriteLine("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM);
     }
 
-    public string GetLettreSaisie(string lettreM) //lettreP est null malgré son retour
-    {
-       lettreM = lettreSaisi;
-       return  lettreM ;
-    }
-
+    
     
 
 }

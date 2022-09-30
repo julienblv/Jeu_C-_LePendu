@@ -1,6 +1,8 @@
 class Partie
 {
     public List<string>Joueur = new List<string>();
+
+    public List<string> lettreSaisi = new List<string>();
     
 
     public int ToursJ1;
@@ -10,10 +12,7 @@ class Partie
 
 
     Mot mot ;
-    static string motAdevinerP;
     static int VieP = 8;
-
-    public string lettreP; //lettreP est un equivalent de lettresaisie de la classe Mot pour pas me paumer
     
     
     
@@ -25,7 +24,6 @@ class Partie
 
     public void Commencer()
     {
-        lettreP=String.Empty;
 
         Console.WriteLine("Bienvenue à toi ! Saisies le nom du Joueur 1");
         Joueur.Add(Console.ReadLine());//Joueur[0]
@@ -56,22 +54,22 @@ class Partie
     public void faireDeviner()
     {
         Console.WriteLine(" Saisissez le mot à faire deviner : ");
-        motAdevinerP = Console.ReadLine();
+        string motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
 
         //déclares mon constructeur
-        Mot mot = new Mot(motAdevinerP,VieP);
-        lettreP = mot.GetLettreSaisie(lettreP);
+        mot = new Mot(motAdevinerP,VieP); // ne pas remettre Mot avant mot sinon Local
+        
 
 
-        while(VieP!=0) // est prise une premiere fois mais redevient nulle ici
+        while(VieP!=0) // est prise une premiere fois mais redevient
         {
             mot.VerificationMot();
           
 
-            if(Potence.Contains(lettreP))
+            if(Potence.Contains(mot.UserInput))
             {
                 Console.WriteLine("Oups vous avez déjà mis cette lettre !");
-                lettreP = "";
+                //mot.lettreSaisi="";
 
             }
             else
@@ -98,37 +96,28 @@ class Partie
         mot.MotIncorrect();
     }
 
-    public void afficherPotenceVide()
-    {
-        for(int i =0; i < motAdevinerP.Length; i++)
-        {
-            Potence.Add("_");  
-        }
-         Console.WriteLine(string.Join(" ", Potence));
-    }  
 
     public void afficherPotenceSeRemplit()
     {
-
+        Console.WriteLine(lettreSaisi.Count);
+        string resultat = String.Empty;
         // remplace les lettres dans la potence
-            for (int i = 0; i < motAdevinerP.Length; i++)
+            for (int i = 0; i < mot.motAdevinerM.Length; i++)
             {
-                Console.WriteLine("voici la lettre" + lettreP[0]); // ceci est null
-                
 
-                if(motAdevinerP.Contains(lettreP[i])) //lettreP est null
+                if(lettreSaisi.Contains(mot.motAdevinerM[i].ToString())) //lettreP est null
                 {
+                    resultat += mot.motAdevinerM[i];
                     
-                    string ichar = Convert.ToString(lettreP[i]);
-                    Potence.Add(ichar);
-                    Console.WriteLine(string.Join(" ", Potence));
+                    
                 }
                 else
                 {
-                    Potence.Add("_");
-                    Console.WriteLine(string.Join(" ", Potence));
+                    resultat += "_";
                 }
+                
             }
+            Console.WriteLine(" Mot : " + resultat);
     }
 }
 
