@@ -57,7 +57,7 @@ class Partie
         string motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
 
         //déclares mon constructeur
-        mot = new Mot(motAdevinerP,VieP); // ne pas remettre Mot avant mot sinon Local
+        mot = new Mot(motAdevinerP,VieP,this); // ne pas remettre Mot avant mot sinon Local
         
 
 

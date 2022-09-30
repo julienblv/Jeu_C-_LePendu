@@ -3,14 +3,15 @@ using System.Collections.Generic;
 class Mot
 {
 
-    public Partie Partie = new Partie();
+    public Partie Partie;
     
     public string UserInput;
 
     
     //constructeur pour que le mot soit utilisable partout
-    public Mot(string mot,int vie)
-    {
+    public Mot(string mot,int vie, Partie partie)
+    { 
+        this.Partie = partie;
         motAdevinerM = mot;
         VieM = vie;
     }
