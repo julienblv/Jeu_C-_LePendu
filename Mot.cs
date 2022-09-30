@@ -65,5 +65,11 @@ class Mot
         Console.WriteLine("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM);
     }
 
+    public string GetLettreSaisie(string lettreM) //lettreP est null malgré son retour
+    {
+        return lettreM = lettreSaisi;
+    }
+
+    
 
 }

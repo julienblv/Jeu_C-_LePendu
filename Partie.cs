@@ -12,6 +12,9 @@ class Partie
     Mot mot ;
     static string motAdevinerP;
     static int VieP = 8;
+
+    public string lettreP; //lettreP est un equivalent de lettresaisie de la classe Mot pour pas me paumer
+    
     
     
     
@@ -55,6 +58,7 @@ class Partie
 
         //déclares mon constructeur
         Mot mot = new Mot(motAdevinerP,VieP);
+        lettreP = mot.GetLettreSaisie(lettreP);
 
 
         while(VieP!=0)
@@ -62,10 +66,10 @@ class Partie
             mot.VerificationMot();
           
 
-            if(Potence.Contains(mot.lettreSaisi))
+            if(Potence.Contains(lettreP))
             {
                 Console.WriteLine("Oups vous avez déjà mis cette lettre !");
-                mot.lettreSaisi = "";
+                lettreP = "";
 
             }
             else
@@ -103,15 +107,17 @@ class Partie
 
     public void afficherPotenceSeRemplit()
     {
-        
 
         // remplace les lettres dans la potence
             for (int i = 0; i < motAdevinerP.Length; i++)
             {
-                if (mot.motAdevinerM.Contains(mot.lettreSaisi[i])) //un des deux est null
+                Console.WriteLine("voici la lettre" + lettreP[0]); // ceci est null
+                
+
+                if(motAdevinerP.Contains(lettreP[i])) //lettreP est null
                 {
                     
-                    string ichar = Convert.ToString(mot.lettreSaisi[i]);
+                    string ichar = Convert.ToString(lettreP[i]);
                     Potence.Add(ichar);
                     Console.WriteLine(string.Join(" ", Potence));
                 }
