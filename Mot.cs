@@ -67,7 +67,8 @@ class Mot
 
     public string GetLettreSaisie(string lettreM) //lettreP est null malgré son retour
     {
-        return lettreM = lettreSaisi;
+       lettreM = lettreSaisi;
+       return  lettreM ;
     }
 
     

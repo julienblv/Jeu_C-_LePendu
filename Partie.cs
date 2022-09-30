@@ -25,6 +25,8 @@ class Partie
 
     public void Commencer()
     {
+        lettreP=String.Empty;
+
         Console.WriteLine("Bienvenue à toi ! Saisies le nom du Joueur 1");
         Joueur.Add(Console.ReadLine());//Joueur[0]
         Console.WriteLine("Merci ! Maintenant, saisies le nom du Joueur 2");
@@ -61,7 +63,7 @@ class Partie
         lettreP = mot.GetLettreSaisie(lettreP);
 
 
-        while(VieP!=0)
+        while(VieP!=0) // est prise une premiere fois mais redevient nulle ici
         {
             mot.VerificationMot();
           
