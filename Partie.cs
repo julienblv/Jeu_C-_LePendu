@@ -24,7 +24,7 @@ class Partie
 
     public void Commencer()
     {
-        VieP = 9;
+        
 
         Console.WriteLine("Bienvenue à toi ! Saisies le nom du Joueur 1");
         Joueur.Add(Console.ReadLine());//Joueur[0]
@@ -88,7 +88,7 @@ class Partie
 
             afficherPotenceSeRemplit();
 
-            if (VieP == 1)
+            if (mot.VieM == 1)
             {
                 partiePerdue();
                 break;
@@ -121,7 +121,7 @@ class Partie
 
     public void afficherPotenceSeRemplit()
     {
-        Console.WriteLine(lettreSaisi.Count);
+        
         string resultat = String.Empty;
         // remplace les lettres dans la potence
         for (int i = 0; i < mot.motAdevinerM.Length; i++)

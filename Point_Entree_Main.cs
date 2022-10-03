@@ -33,6 +33,10 @@ class Point_Entree_Main
                     Quitter();
                     gameisOn = false;
                     break;
+                case 4:
+                    Console.WriteLine("Saisisez un chiffre svp");
+                    break;
+                    
 
             }
         }
@@ -74,13 +78,15 @@ class Point_Entree_Main
                 Console.WriteLine("\t" + line);
             }
 
-            Console.WriteLine("Appuyez sur une touche pour sortir.");
+            Console.WriteLine("Une fois avoir lu vous devrez relançer");
+            Environment.Exit(0);
+
         }
 
         static void Quitter()
         {
-            Console.WriteLine("Merci quand même d'avoir ouvert appuyez sur n'importe quel touche pour sortir");
-            System.Console.ReadKey();
+            Console.WriteLine("Merci quand même d'avoir ouvert");
+            Environment.Exit(0);
         }
 
     

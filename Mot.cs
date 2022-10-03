@@ -2,11 +2,11 @@ using System.Collections.Generic;
 
 class Mot
 {
-
     public Partie Partie;
 
     public string UserInput;
 
+     public int VieM = 9;
 
     //constructeur pour que le mot soit utilisable partout
     public Mot(string mot, int vie, Partie partie)
@@ -17,7 +17,7 @@ class Mot
     }
 
     public string motAdevinerM;
-    public int VieM = 9;
+  
 
     public void VerificationMot()
     {
