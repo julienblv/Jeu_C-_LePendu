@@ -38,20 +38,29 @@ class Mot
         Partie.lettreSaisi.Add(_char.ToString());
         
 
-        //Console.WriteLine("Debug devinez " + motAdevinerM);
-
-        if(motAdevinerM.Contains(_char)) //Plantes ici car motAdevinerM null
+        if(Partie.Potence.Contains(UserInput))
         {
-            Partie.Potence.Add(_char.ToString());
-            Console.WriteLine(" Bravo vous avez trouvé la lettre : "+ UserInput);
+                Console.WriteLine("Oups vous avez déjà mis cette lettre !");
+                //mot.lettreSaisi="";
 
         }
         else
         {
+            if(motAdevinerM.Contains(_char)) //Plantes ici car motAdevinerM null
+            {
+            Partie.Potence.Add(_char.ToString());
+            Console.WriteLine(" Bravo vous avez trouvé la lettre : "+ UserInput);
+
+            }
+            else
+            {
             Console.WriteLine("Aïe Malheureusement ce n'est pas la bonne lettre");
             VieM = VieM-1;
+            }
+
         }
 
+        
 
 
 

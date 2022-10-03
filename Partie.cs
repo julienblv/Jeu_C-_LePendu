@@ -65,17 +65,8 @@ class Partie
         {
             mot.VerificationMot();
           
-
-            if(Potence.Contains(mot.UserInput))
-            {
-                Console.WriteLine("Oups vous avez déjà mis cette lettre !");
-                //mot.lettreSaisi="";
-
-            }
-            else
-            {
-                afficherPotenceSeRemplit();
-            }
+            afficherPotenceSeRemplit();
+            
            
         }
 
