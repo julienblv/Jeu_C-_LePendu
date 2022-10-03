@@ -17,7 +17,7 @@ class Mot
     }
 
     public string motAdevinerM;
-    public int VieM = 8;
+    public int VieM = 9;
 
     public void VerificationMot()
     {

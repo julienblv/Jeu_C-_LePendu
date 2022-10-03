@@ -46,8 +46,23 @@ class Point_Entree_Main
 
         static void Rejouer()
         {
-            //if le joueur veut rejouer alors ...
-            //else break ou gameisOn = false;
+            Console.WriteLine(" Partie terminée, voulez-vous rejouer ? (say 'y' for yes and 'n' for no) ");
+            string choixUser = Console.ReadLine();
+
+            if (choixUser == "y")
+            {
+                Partie partie = new Partie();
+                partie.Commencer();
+            }
+
+            if (choixUser == "n")
+            {
+                Quitter();
+            }
+            else
+            {
+                Console.WriteLine(" Saisissez 'y' ou 'n' Svp ");
+            }
         }
 
         static void Regles()

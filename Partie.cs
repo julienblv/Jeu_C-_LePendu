@@ -12,7 +12,7 @@ class Partie
     public string Verif;
 
     Mot mot ;
-    static int VieP = 8;
+    static int VieP = 9;
     
     
     
@@ -70,7 +70,7 @@ class Partie
           
             afficherPotenceSeRemplit();
 
-            if(VieP==0)
+            if(VieP == 1)
             {
                 partiePerdue();
                 break;
@@ -79,7 +79,8 @@ class Partie
             if(motAdevinerP == Verif)
             {
                 partieGagnée();
-                break;
+                VieP = 0;
+                
             }
             
            
@@ -111,7 +112,7 @@ class Partie
                 if(lettreSaisi.Contains(mot.motAdevinerM[i].ToString())) //lettreP est null
                 {
                     resultat += mot.motAdevinerM[i];
-                    Verif=resultat;
+                    Verif = resultat; 
                     
                 }
                 else
