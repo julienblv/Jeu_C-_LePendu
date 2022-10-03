@@ -24,6 +24,7 @@ class Partie
 
     public void Commencer()
     {
+        VieP = 9;
 
         Console.WriteLine("Bienvenue à toi ! Saisies le nom du Joueur 1");
         Joueur.Add(Console.ReadLine());//Joueur[0]
