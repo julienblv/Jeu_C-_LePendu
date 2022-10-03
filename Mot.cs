@@ -21,8 +21,6 @@ class Mot
 
     public void VerificationMot()
     {
-        Console.WriteLine(motAdevinerM + " est le mot a deviner");
-
         Console.WriteLine("Au joueur d'apres de deviner le mot (choisissez une lettre) : ");
         UserInput=(Console.ReadLine());
 
@@ -68,12 +66,16 @@ class Mot
 
     public void MotCorrect()
     {
+        
         Console.WriteLine("Bravo vous avez trouvé le mot : " + motAdevinerM);
+       
     }
 
     public void MotIncorrect()
     {
-        Console.WriteLine("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM);
+      
+            Console.WriteLine("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM);
+       
     }
 
     

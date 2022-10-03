@@ -9,7 +9,7 @@ class Partie
     public int ToursJ2;
     
     
-
+    public string Verif;
 
     Mot mot ;
     static int VieP = 8;
@@ -29,9 +29,12 @@ class Partie
         Joueur.Add(Console.ReadLine());//Joueur[0]
         Console.WriteLine("Merci ! Maintenant, saisies le nom du Joueur 2");
         Joueur.Add(Console.ReadLine()); //Joueur[1]
+        
         QuiCommences();
         faireDeviner();
-        //potence();
+
+        
+        
         //partieGagnée();
     }
 
@@ -66,14 +69,23 @@ class Partie
             mot.VerificationMot();
           
             afficherPotenceSeRemplit();
+
+            if(VieP==0)
+            {
+                partiePerdue();
+                break;
+            }
+
+            if(motAdevinerP == Verif)
+            {
+                partieGagnée();
+                break;
+            }
             
            
         }
 
-        if(VieP==0)
-        {
-            partiePerdue();
-        }
+        
         
     }
 
@@ -99,7 +111,7 @@ class Partie
                 if(lettreSaisi.Contains(mot.motAdevinerM[i].ToString())) //lettreP est null
                 {
                     resultat += mot.motAdevinerM[i];
-                    
+                    Verif=resultat;
                     
                 }
                 else
@@ -109,6 +121,9 @@ class Partie
                 
             }
             Console.WriteLine(" Mot : " + resultat);
+            
+            Console.WriteLine(Verif);
+
     }
 }
 
