@@ -13,10 +13,13 @@ class Partie
 
     Mot mot;
     static int VieP = 9;
+    GestionnaireJeu gestion;
 
 
-
-
+    public Partie(GestionnaireJeu gestion)
+    {
+        this.gestion = gestion;
+    }
 
 
 
@@ -32,7 +35,7 @@ class Partie
         Joueur.Add(Console.ReadLine()); //Joueur[1]
 
         QuiCommences();
-        faireDeviner();
+        BouclePrincipale();
 
 
 
@@ -55,7 +58,7 @@ class Partie
         }
     }
 
-    public void faireDeviner()
+    public void BouclePrincipale()
     {
         Console.WriteLine(" Saisissez le mot à faire deviner : ");
         string motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
@@ -103,6 +106,7 @@ class Partie
 
 
         }
+        PartieTerminee();
 
 
 
@@ -112,12 +116,14 @@ class Partie
     {
         mot.MotCorrect();
     }
-
     public void partiePerdue()
     {
         mot.MotIncorrect();
     }
-
+    public void PartieTerminee()
+    {
+        gestion.DemanderRejouer();
+    }
 
     public void afficherPotenceSeRemplit()
     {

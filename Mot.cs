@@ -80,6 +80,7 @@ class Mot
 
     }
 
+// déplaçer dans l'affichage
     public void MotCorrect()
     {
 
