@@ -2,12 +2,13 @@ using System.Collections.Generic;
 
 class Affichage
 {
+    Mot mot;
 
     public Affichage()
     {
 
     }
-    publicvoid ErreurSaisie()
+    public void ErreurSaisie()
     {
         Console.WriteLine("veuillez ne saisir que 1 lettre");
     }
@@ -42,6 +43,8 @@ class Affichage
 
     public void afficherPotenceSeRemplit()
     {
+        mot = new Mot(motAdevinerM, VieM, Partie);
+
         
         string resultat = String.Empty;
         // remplace les lettres dans la potence
