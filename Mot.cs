@@ -8,6 +8,8 @@ class Mot
 
      public int VieM = 9;
 
+    Affichage afficherM = new Affichage();
+
     //constructeur pour que le mot soit utilisable partout
     public Mot(string mot, int vie, Partie partie)
     {
@@ -26,7 +28,7 @@ class Mot
 
         if (UserInput.Length > 1)
         {
-            Console.WriteLine("veuillez ne saisir que 1 lettre");
+            afficherM.ErreurSaisie;
             UserInput = Console.ReadLine();
         }
 
@@ -77,21 +79,6 @@ class Mot
 
 
 
-
-    }
-
-// déplaçer dans l'affichage
-    public void MotCorrect()
-    {
-
-        Console.WriteLine("Bravo vous avez trouvé le mot : " + motAdevinerM);
-
-    }
-
-    public void MotIncorrect()
-    {
-
-        Console.WriteLine("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM);
 
     }
 

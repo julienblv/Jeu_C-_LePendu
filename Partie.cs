@@ -12,8 +12,10 @@ class Partie
     public string Verif;
 
     Mot mot;
-    static int VieP = 9;
+    int VieP = 9;
     GestionnaireJeu gestion;
+
+    Affichage afficherP = new Affichage();
 
 
     public Partie(GestionnaireJeu gestion)
@@ -70,7 +72,7 @@ class Partie
 
             if (int.TryParse(motAdevinerP, out c))// comparaison si la valeur est bien un strinfg
             {
-                Console.WriteLine("Saisissez un nom pas un chiffre");
+                afficherP.ErreurSaisieChiffre();
                 motAdevinerP = Console.ReadLine();
                 verifChiffre = 1;
             }
@@ -89,7 +91,7 @@ class Partie
         {
             mot.VerificationMot();
 
-            afficherPotenceSeRemplit();
+            afficherP.afficherPotenceSeRemplit();
 
             if (mot.VieM == 1)
             {
@@ -114,41 +116,17 @@ class Partie
 
     public void partieGagnée()
     {
-        mot.MotCorrect();
+        afficherP.MotCorrect(motAdevinerP);
     }
     public void partiePerdue()
     {
-        mot.MotIncorrect();
+        afficherP.MotIncorrect(motAdevinerP);
     }
     public void PartieTerminee()
     {
         gestion.DemanderRejouer();
     }
 
-    public void afficherPotenceSeRemplit()
-    {
-        
-        string resultat = String.Empty;
-        // remplace les lettres dans la potence
-        for (int i = 0; i < mot.motAdevinerM.Length; i++)
-        {
-
-            if (lettreSaisi.Contains(mot.motAdevinerM[i].ToString())) //lettreP est null
-            {
-                resultat += mot.motAdevinerM[i];
-                Verif = resultat;
-
-            }
-            else
-            {
-                resultat += "_";
-            }
-
-        }
-        Console.WriteLine(" Mot : " + resultat);
-
-        Console.WriteLine(Verif);
-
-    }
+    
 }
 
