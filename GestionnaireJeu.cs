@@ -8,7 +8,7 @@ public class GestionnaireJeu
     }
         public void NouvellePartie()
         {
-            partie = new Partie(this); //il se prends lui meme donc this
+            partie = new Partie(this,null,null); //il se prends lui meme donc this
             partie.Commencer();
         }
 

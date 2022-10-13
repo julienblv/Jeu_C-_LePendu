@@ -4,7 +4,7 @@ class Partie
 
     public List<string> lettreSaisi = new List<string>();
 
-
+    string motAdevinerP;
     public int ToursJ1;
     public int ToursJ2;
 
@@ -18,9 +18,11 @@ class Partie
     Affichage afficherP = new Affichage();
 
 
-    public Partie(GestionnaireJeu gestion)
+    public Partie(GestionnaireJeu gestion, string Verif,List<string> lettreSaisi)
     {
         this.gestion = gestion;
+        this.Verif = Verif;
+        this.lettreSaisi = lettreSaisi;
     }
 
 
@@ -63,7 +65,7 @@ class Partie
     public void BouclePrincipale()
     {
         Console.WriteLine(" Saisissez le mot à faire deviner : ");
-        string motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
+        motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
 
         int verifChiffre = 0;
         while (verifChiffre == 0)

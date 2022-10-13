@@ -28,7 +28,7 @@ class Mot
 
         if (UserInput.Length > 1)
         {
-            afficherM.ErreurSaisie;
+            afficherM.ErreurSaisie();
             UserInput = Console.ReadLine();
         }
 
