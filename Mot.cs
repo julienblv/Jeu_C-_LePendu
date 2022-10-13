@@ -51,7 +51,7 @@ class Mot
         char _char = Convert.ToChar(UserInput);
 
         Console.WriteLine("Vous avez choi la lettre : " + _char);
-        Partie.lettreSaisi.Add(_char.ToString());
+        Partie.lettreSaisi.Add(_char.ToString()); // Plantage colossal
 
 
         if (Partie.Potence.Contains(UserInput))
