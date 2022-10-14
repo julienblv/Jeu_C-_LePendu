@@ -2,13 +2,16 @@ public class GestionnaireJeu
 {
     Partie partie;
     Affichage afficherG;
+
+    string VerifG="";
+    public List<string> lettreSaisiG = new List<string>();
     public GestionnaireJeu()
     {
         GameIntro();
     }
         public void NouvellePartie()
         {
-            partie = new Partie(this,partie.Verif,partie.lettreSaisi); //il se prends lui meme donc this
+            partie = new Partie(this,VerifG,lettreSaisiG); //il se prends lui meme donc this
             partie.Commencer();
         }
 
