@@ -43,7 +43,7 @@ class Affichage
 
     public void afficherPotenceSeRemplit()
     {
-        mot = new Mot(mot.motAdevinerM, mot.VieM, mot.Partie);
+        mot = new Mot(mot.motAdevinerM, mot.VieM, mot.Partie); //plantes ici
         
         partieP = new Partie(gestionP,VerifA,lettreSaisiA);
 
@@ -114,5 +114,10 @@ class Affichage
     public void partieTermineeAff()
     {
         Console.WriteLine(" Partie terminée, voulez-vous rejouer ? (say 'y' for yes and 'n' for no) ");
+    }
+
+    public void Clear()
+    {
+        Console.Clear();
     }
 }

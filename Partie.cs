@@ -64,6 +64,7 @@ class Partie
 
     public void BouclePrincipale()
     {
+        afficherP.Clear();
         Console.WriteLine(" Saisissez le mot à faire deviner : ");
         motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
 
