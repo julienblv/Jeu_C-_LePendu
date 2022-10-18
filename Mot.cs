@@ -1,21 +1,22 @@
 using System.Collections.Generic;
 
-class Mot
+public class Mot
 {
-    public Partie Partie;
 
     public string UserInput;
 
      public int VieM = 9;
 
-    Affichage afficherM = new Affichage();
+   public GestionnaireJeu gestion;
 
     //constructeur pour que le mot soit utilisable partout
-    public Mot(string mot, int vie, Partie partie)
+    public Mot(string mot, int vie,GestionnaireJeu gestion)
     {
-        this.Partie = partie;
+        
         motAdevinerM = mot;
         VieM = vie;
+        this.gestion = gestion;
+        
     }
 
     public string motAdevinerM;
@@ -28,7 +29,7 @@ class Mot
 
         if (UserInput.Length > 1)
         {
-            afficherM.ErreurSaisie();
+            gestion.afficherG.ErreurSaisie();
             UserInput = Console.ReadLine();
         }
 
@@ -51,10 +52,10 @@ class Mot
         char _char = Convert.ToChar(UserInput);
 
         Console.WriteLine("Vous avez choi la lettre : " + _char);
-        Partie.lettreSaisi.Add(_char.ToString()); // Plantage colossal
+        gestion.partie.lettreSaisi.Add(_char.ToString()); 
 
 
-        if (Partie.Potence.Contains(UserInput))
+        if (gestion.partie.Potence.Contains(UserInput))
         {
             Console.WriteLine("Oups vous avez déjà mis cette lettre !");
             //mot.lettreSaisi="";
@@ -64,7 +65,7 @@ class Mot
         {
             if (motAdevinerM.Contains(_char)) 
             {
-                Partie.Potence.Add(_char.ToString());
+                gestion.partie.Potence.Add(_char.ToString());
                 Console.WriteLine(" Bravo vous avez trouvé la lettre : " + UserInput);
 
             }

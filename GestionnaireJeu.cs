@@ -1,17 +1,17 @@
 public class GestionnaireJeu
 {
-    Partie partie;
-    Affichage afficherG;
+    public Partie partie;
+    public Affichage afficherG;
 
-    string VerifG="";
-    public List<string> lettreSaisiG = new List<string>();
     public GestionnaireJeu()
     {
+        afficherG = new Affichage(this);
         GameIntro();
     }
+
         public void NouvellePartie()
         {
-            partie = new Partie(this,VerifG,lettreSaisiG); //il se prends lui meme donc this
+            partie = new Partie(this); //il se prends lui meme donc this
             partie.Commencer();
         }
 
@@ -37,8 +37,8 @@ public class GestionnaireJeu
 
         public void Regles()
         {
-            Affichage afficher = new Affichage();
-            afficher.ReglesA();
+            afficherG.ReglesA();
+           
         }
 
         public void Quitter()
@@ -51,8 +51,8 @@ public class GestionnaireJeu
         public void GameIntro()
         { 
 
-            Affichage afficher = new Affichage();
-            afficher.EcranTitre();
+            
+            afficherG.EcranTitre();
 
             bool gameisOn = true;
             while (gameisOn == true)
@@ -63,7 +63,9 @@ public class GestionnaireJeu
                 switch (ActionMenuParsed)
                 {
                     case 1:
+                        afficherG.Clear();
                         NouvellePartie();
+                        
                         break;
                     case 2:
                         Regles();
@@ -73,7 +75,7 @@ public class GestionnaireJeu
                         gameisOn = false;
                         break;
                     case 4:
-                        afficher.ErreurChiffre();
+                        afficherG.ErreurChiffre();
                         break;
                         
 

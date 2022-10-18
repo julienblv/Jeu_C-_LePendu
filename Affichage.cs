@@ -1,13 +1,23 @@
 using System.Collections.Generic;
 
-class Affichage
+public class Affichage
 {
-    public Partie partieP;
-    Mot mot;
     GestionnaireJeu gestionP;
 
-    public List<string> lettreSaisiA = new List<string>();
-    public string VerifA;
+    Mot mot // Pour Simplifier gestionP.partie.mot avec juste "mot"
+    {
+        get
+        {
+            return gestionP.partie.mot;
+
+        }
+    }
+
+
+    public Affichage(GestionnaireJeu gestionP)
+    {
+        this.gestionP = gestionP;
+    }
     public void ErreurSaisie()
     {
         Console.WriteLine("veuillez ne saisir que 1 lettre");
@@ -43,21 +53,17 @@ class Affichage
 
     public void afficherPotenceSeRemplit()
     {
-        mot = new Mot(mot.motAdevinerM, mot.VieM, mot.Partie); //plantes ici
-        
-        partieP = new Partie(gestionP,VerifA,lettreSaisiA);
-
        
         
         string resultat = String.Empty;
         // remplace les lettres dans la potence
-        for (int i = 0; i < mot.motAdevinerM.Length; i++)
+        for (int i = 0; i < gestionP.partie.mot.motAdevinerM.Length; i++)
         {
 
-            if (lettreSaisiA.Contains(mot.motAdevinerM[i].ToString())) //lettreP est null
+            if (gestionP.partie.lettreSaisi.Contains(gestionP.partie.mot.motAdevinerM[i].ToString())) //lettreP est null
             {
-                resultat += mot.motAdevinerM[i];
-                VerifA = resultat;
+                resultat += gestionP.partie.mot.motAdevinerM[i];
+                gestionP.partie.Verif = resultat;
 
             }
             else
@@ -68,7 +74,7 @@ class Affichage
         }
         Console.WriteLine(" Mot : " + resultat);
 
-        Console.WriteLine(VerifA);
+        Console.WriteLine(gestionP.partie.Verif);
 
         
 

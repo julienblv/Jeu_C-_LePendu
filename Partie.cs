@@ -1,4 +1,4 @@
-class Partie
+public class Partie
 {
     public List<string> Joueur = new List<string>();
 
@@ -11,18 +11,14 @@ class Partie
 
     public string Verif;
 
-    Mot mot;
+    public Mot mot;
     int VieP = 9;
     GestionnaireJeu gestion;
 
-    Affichage afficherP = new Affichage();
 
-
-    public Partie(GestionnaireJeu gestion, string Verif,List<string> lettreSaisi)
+    public Partie(GestionnaireJeu gestion)
     {
         this.gestion = gestion;
-        this.Verif = Verif;
-        this.lettreSaisi = lettreSaisi;
     }
 
 
@@ -37,7 +33,7 @@ class Partie
         Joueur.Add(Console.ReadLine());//Joueur[0]
         Console.WriteLine("Merci ! Maintenant, saisies le nom du Joueur 2");
         Joueur.Add(Console.ReadLine()); //Joueur[1]
-
+        gestion.afficherG.Clear();
         QuiCommences();
         BouclePrincipale();
 
@@ -64,7 +60,7 @@ class Partie
 
     public void BouclePrincipale()
     {
-        afficherP.Clear();
+        gestion.afficherG.Clear();
         Console.WriteLine(" Saisissez le mot à faire deviner : ");
         motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
 
@@ -75,7 +71,7 @@ class Partie
 
             if (int.TryParse(motAdevinerP, out c))// comparaison si la valeur est bien un strinfg
             {
-                afficherP.ErreurSaisieChiffre();
+                gestion.afficherG.ErreurSaisieChiffre();
                 motAdevinerP = Console.ReadLine();
                 verifChiffre = 1;
             }
@@ -86,7 +82,7 @@ class Partie
         }
 
         //déclares mon constructeur
-        mot = new Mot(motAdevinerP, VieP, this); // ne pas remettre Mot avant mot sinon Local
+        mot = new Mot(motAdevinerP, VieP,gestion); // ne pas remettre Mot avant mot sinon Local
 
 
 
@@ -94,7 +90,7 @@ class Partie
         {
             mot.VerificationMot();
 
-            afficherP.afficherPotenceSeRemplit();
+            gestion.afficherG.afficherPotenceSeRemplit();
 
             if (mot.VieM == 1)
             {
@@ -119,11 +115,11 @@ class Partie
 
     public void partieGagnée()
     {
-        afficherP.MotCorrect(motAdevinerP);
+        gestion.afficherG.MotCorrect(motAdevinerP);
     }
     public void partiePerdue()
     {
-        afficherP.MotIncorrect(motAdevinerP);
+        gestion.afficherG.MotIncorrect(motAdevinerP);
     }
     public void PartieTerminee()
     {

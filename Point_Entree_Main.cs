@@ -1,4 +1,4 @@
-class Point_Entree_Main
+public class Point_Entree_Main
 {
     static void Main(string[] agrs)
     {
