@@ -4,6 +4,7 @@ public class Affichage
 {
     GestionnaireJeu gestionP;
 
+    public List<string> potenceAff = new List<string>();
     Mot mot // Pour Simplifier gestionP.partie.mot avec juste "mot"
     {
         get
@@ -48,6 +49,8 @@ public class Affichage
     {
 
         Console.WriteLine("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM);
+        AfficherPotenceGraph();
+        Console.WriteLine(potenceAff[8]);
 
     }
 
@@ -125,5 +128,138 @@ public class Affichage
     public void Clear()
     {
         Console.Clear();
+    }
+
+    public void AfficherPotenceGraph()
+    {
+        potenceAff.Add(
+@"+-------+
+    |
+    |
+    |
+    |
+    |
+==============
+        ");
+
+        potenceAff.Add(
+@" +-------+
+    |       |
+    |       
+    |
+    |
+    |
+==============
+        ");
+
+        potenceAff.Add(
+@" +-------+
+    |       |
+    |       O
+    |
+    |
+    |
+==============
+        ");
+
+        potenceAff.Add(
+@" +-------+
+    |       |
+    |       O
+    |       |
+    |
+    |
+==============
+        ");
+
+        potenceAff.Add(
+@"+-------+
+    |       |
+    |       O
+    |      -|
+    |
+    |
+==============
+        ");
+
+        potenceAff.Add(
+@" +-------+
+    |       |
+    |       O
+    |      -|-
+    |
+    |
+==============
+        ");
+
+        potenceAff.Add(
+@"+-------+
+    |       |
+    |       O
+    |      -|-
+    |      |
+    |
+==============
+        ");
+
+        potenceAff.Add(
+@"+-------+
+    |       |
+    |       O
+    |      -|-
+    |      |
+    |
+==============
+        ");
+
+        potenceAff.Add(
+@" +-------+
+    |       |
+    |       O
+    |      -|-
+    |      | |
+    |
+==============
+        ");
+
+    }
+
+    public void AfficherJoeurs()
+    {
+       foreach(Joueur joueur in gestionP.joueurs)
+       {
+            Console.WriteLine("Score de "+ joueur.nom +" est : " + joueur.score);
+       }
+
+       
+    }
+
+public void PenduIcon(){
+    
+        Console.WriteLine( @" 
+   __                             _   
+  / /  ___   _ __   ___ _ __   __| |_   _  
+ / /  / _ \ | '_ \ / _ \ '_ \ / _` | | | | 
+/ /__|  __/ | |_) |  __/ | | | (_| | |_| | 
+\____/\___| | .__/ \___|_| |_|\__,_|\__,_| 
+            |_|
+            ");
+
+}
+
+
+    public void espace()
+    {
+        Console.WriteLine("                                 ");
+        Console.WriteLine("                                 ");
+    }
+
+ 
+public void AfficherLettres()
+    {
+       for(int i = 0; i < gestionP.partie.lettreSaisi.Count(); i++)
+       {
+            Console.WriteLine("Vous avez Saisi les Lettres : " + gestionP.partie.lettreSaisi[i]);
+       } 
     }
 }

@@ -1,6 +1,5 @@
 public class Partie
 {
-    public List<string> Joueur = new List<string>();
 
     public List<string> lettreSaisi = new List<string>();
 
@@ -15,6 +14,27 @@ public class Partie
     int VieP = 9;
     GestionnaireJeu gestion;
 
+    public Joueur joueurDevine
+    {
+        get
+        {
+            int somme = gestion.joueur1.score + gestion.joueur2.score;
+            bool joueur1Devine = (somme % 2 == 0);
+            
+            return (joueur1Devine)?gestion.joueur1:gestion.joueur2; //expression ternaire equivaut a if-else : stockable dans des variables
+        }
+    }
+
+    public Joueur joueurFaitDevine
+    {
+        get
+        {
+            int somme = gestion.joueur1.score + gestion.joueur2.score;
+            bool joueur1Devine = (somme % 2 != 0);
+            
+            return (joueur1Devine)?gestion.joueur1:gestion.joueur2; //expression ternaire equivaut a if-else : stockable dans des variables
+        }
+    }
 
     public Partie(GestionnaireJeu gestion)
     {
@@ -23,17 +43,16 @@ public class Partie
 
 
 
+
     public List<string> Potence = new List<string>();
 
     public void Commencer()
     {
-        
-
-        Console.WriteLine("Bienvenue à toi ! Saisies le nom du Joueur 1");
-        Joueur.Add(Console.ReadLine());//Joueur[0]
-        Console.WriteLine("Merci ! Maintenant, saisies le nom du Joueur 2");
-        Joueur.Add(Console.ReadLine()); //Joueur[1]
         gestion.afficherG.Clear();
+        gestion.afficherG.PenduIcon();
+
+        gestion.afficherG.espace();
+        
         QuiCommences();
         BouclePrincipale();
 
@@ -44,24 +63,18 @@ public class Partie
 
     public void QuiCommences()
     {
-        Random rnd = new Random();
-        int chiffreAleatoiire = rnd.Next(10);
-        if (chiffreAleatoiire % 2 == 0)
-        {
-            Console.WriteLine(Joueur[0] + " C'est à vous de commençer !");
-            ToursJ1++;
-        }
-        else
-        {
-            Console.WriteLine(Joueur[1] + " C'est à vous de commençer !");
-            ToursJ2++;
-        }
+        gestion.afficherG.espace();
+       
+        Console.WriteLine(joueurDevine.nom + " C'est à vous de commençer !");
     }
 
     public void BouclePrincipale()
     {
         gestion.afficherG.Clear();
-        Console.WriteLine(" Saisissez le mot à faire deviner : ");
+        gestion.afficherG.PenduIcon();
+
+        gestion.afficherG.espace();
+        Console.WriteLine(joueurFaitDevine.nom + " Saisissez le mot à faire deviner : ");
         motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
 
         int verifChiffre = 0;
@@ -89,7 +102,6 @@ public class Partie
         while (VieP != 0) // est prise une premiere fois mais redevient
         {
             mot.VerificationMot();
-
             gestion.afficherG.afficherPotenceSeRemplit();
 
             if (mot.VieM == 1)
@@ -115,14 +127,20 @@ public class Partie
 
     public void partieGagnée()
     {
+        gestion.afficherG.espace();
+        joueurDevine.score++;
         gestion.afficherG.MotCorrect(motAdevinerP);
     }
     public void partiePerdue()
     {
+        gestion.afficherG.espace();
+        joueurFaitDevine.score++;
         gestion.afficherG.MotIncorrect(motAdevinerP);
     }
     public void PartieTerminee()
     {
+        gestion.afficherG.espace();
+        gestion.afficherG.AfficherJoeurs(); // affiche les scores
         gestion.DemanderRejouer();
     }
 
