@@ -6,7 +6,8 @@ public class Mot
     public string UserInput;
     public int count = 0;
     public int VieM = 9;
-
+    
+    public int temp;
    public GestionnaireJeu gestion;
 
     //constructeur pour que le mot soit utilisable partout
@@ -92,12 +93,12 @@ public class Mot
                 Console.WriteLine("Aïe Malheureusement ce n'est pas la bonne lettre");
                 VieM = VieM - 1;
                 count++;
-                int temp = count;
+                temp = count;
                 Console.WriteLine(gestion.afficherG.potenceAff[temp]); 
                 Thread.Sleep(1000);
                 gestion.afficherG.Clear();
 
-
+                Console.WriteLine(gestion.afficherG.potenceAff[temp]); 
             }
 
         }

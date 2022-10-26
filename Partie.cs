@@ -76,7 +76,7 @@ public class Partie
         gestion.afficherG.espace();
         Console.WriteLine(joueurFaitDevine.nom + " Saisissez le mot à faire deviner : ");
         motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
-
+        gestion.afficherG.Clear();
         int verifChiffre = 0;
         while (verifChiffre == 0)
         {
@@ -116,6 +116,8 @@ public class Partie
                 VieP = 0;
 
             }
+
+           // Console.WriteLine(gestion.afficherG.potenceAff[gestion.partie.mot.temp]); // erreur si mis
 
 
         }

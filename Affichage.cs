@@ -40,6 +40,7 @@ public class Affichage
 
     public void MotCorrect(string motAdevinerM)
     {
+        Console.ForegroundColor = System.ConsoleColor.Cyan;
 
         Console.WriteLine("Bravo vous avez trouvé le mot : " + motAdevinerM);
 
@@ -47,6 +48,7 @@ public class Affichage
 
     public void MotIncorrect(string motAdevinerM)
     {
+        Console.ForegroundColor = System.ConsoleColor.Red;
 
         Console.WriteLine("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM);
         AfficherPotenceGraph();
@@ -56,7 +58,7 @@ public class Affichage
 
     public void afficherPotenceSeRemplit()
     {
-       
+       Console.ForegroundColor = System.ConsoleColor.Cyan;
         
         string resultat = String.Empty;
         // remplace les lettres dans la potence
@@ -85,6 +87,7 @@ public class Affichage
 
     public void EcranTitre()
     {
+        Console.ForegroundColor = System.ConsoleColor.Magenta;
         string Ascii =  @" 
    __                             _   
   / /  ___   _ __   ___ _ __   __| |_   _  
@@ -92,7 +95,9 @@ public class Affichage
 / /__|  __/ | |_) |  __/ | | | (_| | |_| | 
 \____/\___| | .__/ \___|_| |_|\__,_|\__,_| 
             |_|
-            ";                            
+            ";
+
+            Console.ForegroundColor = System.ConsoleColor.Cyan;                            
             Console.WriteLine(Ascii);
             Console.WriteLine("                                 ");
             Console.WriteLine("                                 ");
@@ -122,6 +127,7 @@ public class Affichage
 
     public void partieTermineeAff()
     {
+        Console.ForegroundColor = System.ConsoleColor.Cyan;
         Console.WriteLine(" Partie terminée, voulez-vous rejouer ? (say 'y' for yes and 'n' for no) ");
     }
 
@@ -132,6 +138,7 @@ public class Affichage
 
     public void AfficherPotenceGraph()
     {
+        Console.ForegroundColor = System.ConsoleColor.Red;
         potenceAff.Add(
 @"+-------+
     |
@@ -221,20 +228,23 @@ public class Affichage
     |
 ==============
         ");
+        
 
     }
 
     public void AfficherJoeurs()
     {
-       foreach(Joueur joueur in gestionP.joueurs)
-       {
+        Console.ForegroundColor = System.ConsoleColor.Cyan;
+        foreach(Joueur joueur in gestionP.joueurs)
+        {
             Console.WriteLine("Score de "+ joueur.nom +" est : " + joueur.score);
-       }
+        }
 
        
     }
 
 public void PenduIcon(){
+    Console.ForegroundColor = System.ConsoleColor.Magenta;
     
         Console.WriteLine( @" 
    __                             _   
