@@ -32,7 +32,7 @@ public class GestionnaireJeu
         {
             partie = new Partie(this); //il se prends lui meme donc this
             partie.Commencer();
-            afficherG.AfficherPotenceGraph();
+            afficherG.AfficherPotenceGraph(0);
         }
 
         public void DemanderRejouer()

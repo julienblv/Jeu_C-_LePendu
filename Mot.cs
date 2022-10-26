@@ -5,7 +5,7 @@ public class Mot
 
     public string UserInput;
     public int count = 0;
-    public int VieM = 9;
+    public int VieM = 11;
     
     public int temp;
    public GestionnaireJeu gestion;
@@ -26,7 +26,6 @@ public class Mot
     public void VerificationMot()
     {
         gestion.afficherG.espace();
-        gestion.afficherG.AfficherLettres();
         Console.WriteLine(gestion.partie.joueurDevine.nom + " a vous de deviner le mot (choisissez une lettre) : ");
         UserInput = (Console.ReadLine());
         gestion.afficherG.Clear();
@@ -45,8 +44,10 @@ public class Mot
         int verifChiffre = 0;
         while (verifChiffre == 0)
         {
+            gestion.afficherG.AffichageLettreSaisie();
             if (int.TryParse(UserInput, out c2))// comparaison si la valeur est bien un strinfg
             {
+
                 gestion.afficherG.PenduIcon();
                 gestion.afficherG.espace();
                 Console.WriteLine("Saisissez une lettre pas un chiffre");
@@ -89,16 +90,15 @@ public class Mot
             {
                 gestion.afficherG.PenduIcon();
                 gestion.afficherG.espace();
-                gestion.afficherG.AfficherPotenceGraph();
-                Console.WriteLine("Aïe Malheureusement ce n'est pas la bonne lettre");
+                gestion.afficherG.AfficherMessage("Aie malhheureusement ce n'est pas la bonne lettre", ConsoleColor.Red);
+                gestion.afficherG.AfficherPotenceGraph(temp);
                 VieM = VieM - 1;
                 count++;
                 temp = count;
-                Console.WriteLine(gestion.afficherG.potenceAff[temp]); 
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 gestion.afficherG.Clear();
 
-                Console.WriteLine(gestion.afficherG.potenceAff[temp]); 
+                
             }
 
         }

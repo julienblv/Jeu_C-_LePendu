@@ -11,7 +11,7 @@ public class Partie
     public string Verif;
 
     public Mot mot;
-    int VieP = 9;
+    int VieP = 11;
     GestionnaireJeu gestion;
 
     public Joueur joueurDevine
@@ -65,7 +65,7 @@ public class Partie
     {
         gestion.afficherG.espace();
        
-        Console.WriteLine(joueurDevine.nom + " C'est à vous de commençer !");
+        gestion.afficherG.AfficherMessage(joueurDevine.nom + " C'est à vous de commençer !",ConsoleColor.Magenta);
     }
 
     public void BouclePrincipale()
@@ -74,7 +74,7 @@ public class Partie
         gestion.afficherG.PenduIcon();
 
         gestion.afficherG.espace();
-        Console.WriteLine(joueurFaitDevine.nom + " Saisissez le mot à faire deviner : ");
+        gestion.afficherG.AfficherMessage(joueurFaitDevine.nom + " Saisissez le mot à faire deviner : ",ConsoleColor.Yellow);
         motAdevinerP = Console.ReadLine(); //nv mot a devinerp local
         gestion.afficherG.Clear();
         int verifChiffre = 0;
@@ -101,6 +101,9 @@ public class Partie
 
         while (VieP != 0) // est prise une premiere fois mais redevient
         {
+            Console.Clear();
+            gestion.afficherG.PenduIcon();
+            gestion.afficherG.AffichageLettreSaisie();
             mot.VerificationMot();
             gestion.afficherG.afficherPotenceSeRemplit();
 

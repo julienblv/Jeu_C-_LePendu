@@ -4,7 +4,21 @@ public class Affichage
 {
     GestionnaireJeu gestionP;
 
-    public List<string> potenceAff = new List<string>();
+    string[] hangmanArray = new string[11]
+        {
+            "#              \n#              \n#              \n#              \n#              \n#              \n# ________    \n",
+            "#              \n#    ||        \n#    ||        \n#    ||        \n#    ||        \n#    ||        \n# ___||___    \n",
+            "#    ______    \n#    ||        \n#    ||        \n#    ||        \n#    ||        \n#    ||        \n# ___||___    \n",
+            "#    ______    \n#    ||    |   \n#    ||        \n#    ||        \n#    ||        \n#    ||        \n# ___||___    \n",
+            "#    ______    \n#    ||/   |   \n#    ||        \n#    ||        \n#    ||        \n#    ||        \n# ___||___    \n",
+            "#    ______    \n#    ||/   |   \n#    ||    @   \n#    ||        \n#    ||        \n#    ||        \n# ___||___    \n",
+            "#    ______    \n#    ||/   |   \n#    ||    @   \n#    ||    |   \n#    ||        \n#    ||        \n# ___||___    \n",
+            "#    ______    \n#    ||/   |   \n#    ||    @   \n#    ||   -|   \n#    ||        \n#    ||        \n# ___||___    \n",
+            "#    ______    \n#    ||/   |   \n#    ||    @   \n#    ||   -|-  \n#    ||        \n#    ||        \n# ___||___    \n",
+            "#    ______    \n#    ||/   |   \n#    ||    @   \n#    ||   -|-  \n#    ||   /    \n#    ||        \n# ___||___    \n",
+            "#    ______    \n#    ||/   |   \n#    ||    @   \n#    ||   -|-  \n#    ||   / \\ \n#    ||        \n# ___||___    \n",
+
+        };
     Mot mot // Pour Simplifier gestionP.partie.mot avec juste "mot"
     {
         get
@@ -40,25 +54,21 @@ public class Affichage
 
     public void MotCorrect(string motAdevinerM)
     {
-        Console.ForegroundColor = System.ConsoleColor.Cyan;
-
-        Console.WriteLine("Bravo vous avez trouvé le mot : " + motAdevinerM);
+       AfficherMessage("Bravo vous avez trouvé le mot : " + motAdevinerM, ConsoleColor.Green);
 
     }
 
     public void MotIncorrect(string motAdevinerM)
     {
-        Console.ForegroundColor = System.ConsoleColor.Red;
 
-        Console.WriteLine("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM);
-        AfficherPotenceGraph();
-        Console.WriteLine(potenceAff[8]);
+        AfficherMessage("Aïe Malheureusement C'est perdu le mot n'as pas été trouvé, c'était : " + motAdevinerM,ConsoleColor.Red);
+        AfficherPotenceGraph(10);
 
     }
 
     public void afficherPotenceSeRemplit()
     {
-       Console.ForegroundColor = System.ConsoleColor.Cyan;
+       //Console.ForegroundColor = System.ConsoleColor.Cyan;
         
         string resultat = String.Empty;
         // remplace les lettres dans la potence
@@ -87,18 +97,8 @@ public class Affichage
 
     public void EcranTitre()
     {
-        Console.ForegroundColor = System.ConsoleColor.Magenta;
-        string Ascii =  @" 
-   __                             _   
-  / /  ___   _ __   ___ _ __   __| |_   _  
- / /  / _ \ | '_ \ / _ \ '_ \ / _` | | | | 
-/ /__|  __/ | |_) |  __/ | | | (_| | |_| | 
-\____/\___| | .__/ \___|_| |_|\__,_|\__,_| 
-            |_|
-            ";
-
-            Console.ForegroundColor = System.ConsoleColor.Cyan;                            
-            Console.WriteLine(Ascii);
+            PenduIcon();
+            //Console.ForegroundColor = System.ConsoleColor.Cyan;                            
             Console.WriteLine("                                 ");
             Console.WriteLine("                                 ");
             Console.WriteLine("                 Start(1)        ");
@@ -127,7 +127,7 @@ public class Affichage
 
     public void partieTermineeAff()
     {
-        Console.ForegroundColor = System.ConsoleColor.Cyan;
+        //Console.ForegroundColor = System.ConsoleColor.Cyan;
         Console.WriteLine(" Partie terminée, voulez-vous rejouer ? (say 'y' for yes and 'n' for no) ");
     }
 
@@ -136,105 +136,17 @@ public class Affichage
         Console.Clear();
     }
 
-    public void AfficherPotenceGraph()
+    public void AfficherPotenceGraph(int index)
     {
         Console.ForegroundColor = System.ConsoleColor.Red;
-        potenceAff.Add(
-@"+-------+
-    |
-    |
-    |
-    |
-    |
-==============
-        ");
-
-        potenceAff.Add(
-@" +-------+
-    |       |
-    |       
-    |
-    |
-    |
-==============
-        ");
-
-        potenceAff.Add(
-@" +-------+
-    |       |
-    |       O
-    |
-    |
-    |
-==============
-        ");
-
-        potenceAff.Add(
-@" +-------+
-    |       |
-    |       O
-    |       |
-    |
-    |
-==============
-        ");
-
-        potenceAff.Add(
-@"+-------+
-    |       |
-    |       O
-    |      -|
-    |
-    |
-==============
-        ");
-
-        potenceAff.Add(
-@" +-------+
-    |       |
-    |       O
-    |      -|-
-    |
-    |
-==============
-        ");
-
-        potenceAff.Add(
-@"+-------+
-    |       |
-    |       O
-    |      -|-
-    |      |
-    |
-==============
-        ");
-
-        potenceAff.Add(
-@"+-------+
-    |       |
-    |       O
-    |      -|-
-    |      |
-    |
-==============
-        ");
-
-        potenceAff.Add(
-@" +-------+
-    |       |
-    |       O
-    |      -|-
-    |      | |
-    |
-==============
-        ");
+        Console.WriteLine(hangmanArray[index]);
         
-
+        Console.ForegroundColor = ConsoleColor.White;
     }
 
     public void AfficherJoeurs()
     {
-        Console.ForegroundColor = System.ConsoleColor.Cyan;
+        //Console.ForegroundColor = System.ConsoleColor.Cyan;
         foreach(Joueur joueur in gestionP.joueurs)
         {
             Console.WriteLine("Score de "+ joueur.nom +" est : " + joueur.score);
@@ -244,7 +156,7 @@ public class Affichage
     }
 
 public void PenduIcon(){
-    Console.ForegroundColor = System.ConsoleColor.Magenta;
+    //Console.ForegroundColor = System.ConsoleColor.Magenta;
     
         Console.WriteLine( @" 
    __                             _   
@@ -264,12 +176,30 @@ public void PenduIcon(){
         Console.WriteLine("                                 ");
     }
 
- 
-public void AfficherLettres()
+    /// permets d'afficher des messages colorés
+    public void AfficherMessage(string phrase, ConsoleColor couleur) 
     {
-       for(int i = 0; i < gestionP.partie.lettreSaisi.Count(); i++)
-       {
-            Console.WriteLine("Vous avez Saisi les Lettres : " + gestionP.partie.lettreSaisi[i]);
-       } 
+        Console.ForegroundColor = couleur;
+        Console.WriteLine(phrase);
+        Console.ForegroundColor = ConsoleColor.White;
+
+    }
+
+    public void AffichageLettreSaisie()
+    {
+        if(gestionP.partie.lettreSaisi.Count==0)
+        {
+            return;
+        }
+        string message = "voici les lettres que vous avez joué : ";
+
+        for(int i=0;i<gestionP.partie.lettreSaisi.Count;i++)
+        {
+            message += gestionP.partie.lettreSaisi[i] + " , ";
+
+        }
+        Console.WriteLine(message);
+
+
     }
 }
