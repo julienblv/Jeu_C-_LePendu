@@ -14,7 +14,7 @@ public class Partie
     int VieP = 11;
     GestionnaireJeu gestion;
 
-    public Joueur joueurDevine
+    public Joueur joueurDevine //getter
     {
         get
         {
@@ -70,7 +70,7 @@ public class Partie
 
     public void BouclePrincipale()
     {
-        gestion.afficherG.Clear();
+        gestion.afficherG.Clear(); 
         gestion.afficherG.PenduIcon();
 
         gestion.afficherG.espace();
@@ -101,7 +101,8 @@ public class Partie
 
         while (VieP != 0) // est prise une premiere fois mais redevient
         {
-            Console.Clear();
+
+            Console.Clear(); // !!!!!!!! -> ne permets pas l'affichage de la potence sans réafficher le menu
             gestion.afficherG.PenduIcon();
             gestion.afficherG.AffichageLettreSaisie();
             mot.VerificationMot();

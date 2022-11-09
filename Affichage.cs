@@ -157,15 +157,14 @@ public class Affichage
 
 public void PenduIcon(){
     //Console.ForegroundColor = System.ConsoleColor.Magenta;
-    
-        Console.WriteLine( @" 
+       AfficherMessage( @" 
    __                             _   
   / /  ___   _ __   ___ _ __   __| |_   _  
  / /  / _ \ | '_ \ / _ \ '_ \ / _` | | | | 
 / /__|  __/ | |_) |  __/ | | | (_| | |_| | 
 \____/\___| | .__/ \___|_| |_|\__,_|\__,_| 
             |_|
-            ");
+            ",ConsoleColor.Cyan);
 
 }
 

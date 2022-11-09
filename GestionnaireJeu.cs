@@ -95,7 +95,7 @@ public class GestionnaireJeu
             afficherG.EcranTitre();
 
             bool gameisOn = true;
-            while (gameisOn == true)
+            while (gameisOn == true) // Tant que gameisOn est true on récupère le choix de l'utilisateur
             {
                 string ActionMenu = Console.ReadLine();
                 int ActionMenuParsed = Convert.ToInt32(ActionMenu);
@@ -115,7 +115,7 @@ public class GestionnaireJeu
                         Quitter();
                         gameisOn = false;
                         break;
-                    case 4:
+                    default:
                         afficherG.ErreurChiffre();
                         break;
                         

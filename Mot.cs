@@ -40,12 +40,12 @@ public class Mot
             gestion.afficherG.Clear();
         }
 
-        int c2; // valeur c car compares
+        int c2; // utilisé pour le try parse
         int verifChiffre = 0;
         while (verifChiffre == 0)
         {
             gestion.afficherG.AffichageLettreSaisie();
-            if (int.TryParse(UserInput, out c2))// comparaison si la valeur est bien un strinfg
+            if (int.TryParse(UserInput, out c2))// comparaison si la valeur est bien un string
             {
 
                 gestion.afficherG.PenduIcon();
